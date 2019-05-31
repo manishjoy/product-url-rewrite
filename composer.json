@@ -3,7 +3,7 @@
     "description": "free magento 2 extension to resolve product url rewrite issue",
     "type": "magento2-module",
     "version": "1.0.0",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
