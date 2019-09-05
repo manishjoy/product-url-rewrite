@@ -1,6 +1,5 @@
 <?php
 
-
 namespace ManishJoy\ProductUrlRewrite\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
@@ -120,10 +119,10 @@ class Run extends Command
             $requestPathWithoutSuffix = $_product->getUrlKey();
 
             // check if request path exists
-            $mathcingRows = $connection->fetchAll("SELECT `url_rewrite_id` FROM " . $urlRewriteTable . " WHERE `entity_type` = 'product' AND `request_path` = "."'".$requestPathWithoutSuffix.$this->getProductUrlSuffix()."'");
+            $mathcingRows = $connection->fetchAll("SELECT `url_rewrite_id` FROM " . $urlRewriteTable . " WHERE `entity_type` = 'product' AND `store_id` = ". $storeId ." AND `request_path` = "."'".$requestPathWithoutSuffix.$this->getProductUrlSuffix()."'");
             while (count($mathcingRows) > 0) {
                 $requestPathWithoutSuffix .= '-1';
-                $mathcingRows = $connection->fetchAll("SELECT `url_rewrite_id` FROM " . $urlRewriteTable . " WHERE `entity_type` = 'product' AND `request_path` = "."'".$requestPathWithoutSuffix.$this->getProductUrlSuffix()."'");
+                $mathcingRows = $connection->fetchAll("SELECT `url_rewrite_id` FROM " . $urlRewriteTable . " WHERE `entity_type` = 'product' AND `store_id` = ". $storeId ." AND `request_path` = "."'".$requestPathWithoutSuffix.$this->getProductUrlSuffix()."'");
             }
             $requestPath = $requestPathWithoutSuffix.$this->getProductUrlSuffix();
 
@@ -142,10 +141,10 @@ class Run extends Command
                 $requestPathWithoutSuffix = $categoryPath.$_product->getUrlKey();
 
                 // check if request path exists
-                $mathcingRows = $connection->fetchAll("SELECT `url_rewrite_id` FROM " . $urlRewriteTable . " WHERE `entity_type` = 'product' AND `request_path` = "."'".$requestPathWithoutSuffix.$this->getProductUrlSuffix()."'");
+                $mathcingRows = $connection->fetchAll("SELECT `url_rewrite_id` FROM " . $urlRewriteTable . " WHERE `entity_type` = 'product' AND `store_id` = ". $storeId ." AND `request_path` = "."'".$requestPathWithoutSuffix.$this->getProductUrlSuffix()."'");
                 while (count($mathcingRows) > 0) {
                     $requestPathWithoutSuffix .= '-1';
-                    $mathcingRows = $connection->fetchAll("SELECT `url_rewrite_id` FROM " . $urlRewriteTable . " WHERE `entity_type` = 'product' AND `request_path` = "."'".$requestPathWithoutSuffix.$this->getProductUrlSuffix()."'");
+                    $mathcingRows = $connection->fetchAll("SELECT `url_rewrite_id` FROM " . $urlRewriteTable . " WHERE `entity_type` = 'product' AND `store_id` = ". $storeId ." AND `request_path` = "."'".$requestPathWithoutSuffix.$this->getProductUrlSuffix()."'");
                 }
                 $requestPath = $requestPathWithoutSuffix.$this->getProductUrlSuffix();
                 $requestPath = $categoryPath.$_product->getUrlKey().$this->getProductUrlSuffix();
