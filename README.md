@@ -1,8 +1,10 @@
 # ManishJoy_ProductUrlRewrite v1.0.0
 ## Module Purpose
-### This extension adds console commands to be able to regenerate:
+### This extension adds console commands to regenerate product URLs:
 1. Can generate URL rewrites for specific product(s)
 2. Can generate URL rewrites for all products at once
+
+___________________________________________________________________________________________________
 
 ## Features:
 1. Easy to install & use
