@@ -98,4 +98,6 @@ ________________________________________________________________________________
 
 ## Tutorials and Blogs
 
+ - <a href="https://blog.manishjoy.com/">https://blog.manishjoy.com</a>
+
  - <a href="https://blog.manishjoy.com/magento-development-guide/">https://blog.manishjoy.com/magento-development-guide/</a>
